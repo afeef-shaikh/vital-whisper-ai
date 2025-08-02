@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom"
 import { Bell, Search, User } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 export function MainLayout() {
   return (
@@ -27,6 +28,8 @@ export function MainLayout() {
               </div>
               
               <div className="flex items-center gap-3">
+                <ThemeToggle />
+                
                 <Button variant="ghost" size="icon" className="relative">
                   <Bell className="w-5 h-5" />
                   <span className="absolute -top-1 -right-1 w-3 h-3 bg-destructive rounded-full text-xs"></span>

@@ -4,8 +4,11 @@ import { Switch } from "@/components/ui/switch"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Bell, Shield, Moon, Globe, Download, Trash2 } from "lucide-react"
+import { useTheme } from "@/components/theme-provider"
 
 export default function Settings() {
+  const { theme, setTheme } = useTheme()
+
   return (
     <div className="space-y-6">
       {/* Header */}
@@ -118,7 +121,7 @@ export default function Settings() {
               <Label className="text-base">Theme</Label>
               <p className="text-sm text-muted-foreground">Choose your preferred theme</p>
             </div>
-            <Select defaultValue="system">
+            <Select value={theme} onValueChange={setTheme}>
               <SelectTrigger className="w-32">
                 <SelectValue />
               </SelectTrigger>
